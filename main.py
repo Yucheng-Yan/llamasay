@@ -1,6 +1,11 @@
 import ast, subprocess, sys, os, ollama
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
+def load_model(token):
+	"""Load model and tokenizer"""
+	tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.2-3B", token=token)
+	model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-3.2-3B", token=token)
+ 
 def token_getter():
 	"""Check if the token is in the record"""
 	file_exist = os.path.isfile("credentials.txt")
@@ -16,8 +21,8 @@ def token_getter():
 def validate_command(command):
 	"""verify if a command is valid"""
 	try:
-		subprocess.run(command, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-		return True
+		result = subprocess.run(command, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+		return result
 	except subprocess.CalledProcessError:
 		return False
 
@@ -63,18 +68,17 @@ if __name__ == "__main__":
 
 	print("Welcome to llamasay! Type a command to run or type 'exit' to quit.")
 	token = token_getter()
-
-	tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.2-3B", token=token)
-	model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-3.2-3B", token=token)
+	load_model(token)
 
 	while True:
 		user_input = input("% ")
 
 		if user_input == "exit":
 			sys.exit(0)
-
-		if validate_command(user_input):
-			subprocess.run(user_input, shell=True)
+		
+		result = validate_command(user_input)
+		if result:
+			print(result.stdout.decode().rstrip())
 		else:
 			print("Invalid command. Generating suggestions...")
 			suggestions = suggest_commands(user_input)

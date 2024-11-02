@@ -26,6 +26,7 @@ After running `python3 main.py`, you should see the message below:
 ```bash
 (venv) lcthw@Yuchengs-MacBook-Air llamasay % python3 main.py     
 Welcome to llamasay! Type a command to run or type 'exit' to quit.
+Loading checkpoint shards: 100%|██████████████████████████████████████████████████████| 2/2 [00:10<00:00,  5.09s/it]
 ```
 
 Bash commands will be run as usual
