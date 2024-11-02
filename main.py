@@ -45,10 +45,10 @@ def suggest_commands(user_input):
 
 if __name__ == "__main__":
 	common = [
-				"ls", "cd", "pwd", "mkdir", "rmdir", "rm", "cp", "mv", "touch", "cat", "more",
-    			"less", "head", "tail", "find", "chmod", "chown", "ln", "df", "du", "nano", 
-       			"vi", "vim", "echo", "grep", "sed", 	"awk", "sort", "uniq", "cut", "wc", 
-          		"tr", "tar", "zip", "unzip", "gzip", "gunzip", "ssh", "scp", "curl", "wget", 
+		"ls", "cd", "pwd", "mkdir", "rmdir", "rm", "cp", "mv", "touch", "cat", "more",
+    		"less", "head", "tail", "find", "chmod", "chown", "ln", "df", "du", "nano", 
+       		"vi", "vim", "echo", "grep", "sed", 	"awk", "sort", "uniq", "cut", "wc", 
+          	"tr", "tar", "zip", "unzip", "gzip", "gunzip", "ssh", "scp", "curl", "wget", 
             	"ping", "top", "htop", "ps", "kill", "killall", "bg", "fg", "jobs", "nohup", 
              	"disown", "alias", "unalias", "history", "clear", "man", "which", "who", 
               	"whoami", "uptime", "uname", "env", "export", "source", "sudo", "apt", "yum", 
