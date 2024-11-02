@@ -4,6 +4,7 @@ Llamasay is a Bash-based program that can guess the command the user intended to
 
 ## Prerequisite
 To use llamasay, you will need to set up [ollama](https://ollama.com/) and get at least one model you want to use.
+_Note: [Llama3](https://ollama.com/library/llama3.2) is recommended because the program is developed based on calling its API._
 
 ## Installation
 
