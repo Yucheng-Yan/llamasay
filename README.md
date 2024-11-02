@@ -1,8 +1,6 @@
 # llamasay
 
-Llamasay is a Bash-based program that can guess the command the user intended to input (by calling a large language model) 
-
-when the user enters invalid Bash commands.
+Llamasay is a Bash-based program that can guess the command the user intended to input (by calling a large language model) when the user enters invalid Bash commands.
 
 ## Prerequisite
 To use llamasay, you will need to set up [ollama](https://ollama.com/) and get at least one model you want to use.
