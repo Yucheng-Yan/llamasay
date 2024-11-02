@@ -2,6 +2,9 @@
 
 Llamasay is a Bash-based software that can correct typos in Bash commands, powered by the [Llama 3 model](https://ai.meta.com/blog/meta-llama-3/).
 
+## Prerequisite
+To use llamasay, you will need to set up [ollama](https://ollama.com/) and get at least one model you want to use.
+
 ## Installation
 
 ``````bash
@@ -9,6 +12,12 @@ git clone git@github.com:Yucheng-Yan/llamasay.git
 cd llamasay
 python3 main.py
 ``````
+
+## Set up
+The first time you use llamasay, the program will prompt you to enter your [Hugging Face token](https://huggingface.co/docs/hub/security-tokens).
+
+After you enter it for the first time, you will not need to enter it again in the future.
+
 
 ## Examples
 After running `python3 main.py`, you should see the message below:
