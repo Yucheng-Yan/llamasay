@@ -22,7 +22,7 @@ Bash commands will be run as usual
 % pwd
 /Users/lcthw/llamasay # The path of working directory is printed
 ```
-If the input is invalid, the program will call Llama3 API and to guess the intended command.
+If the input is invalid, the program will call Llama3 API to guess the intended command.
 ```bash
 % pwf
 Invalid command. Generating suggestions...
@@ -45,6 +45,5 @@ When the program is unable to find any command similar to the one the user input
 Invalid command. Generating suggestions...
 Sorry, I can not find your intended command.
 % exit
-```
 ```
 
