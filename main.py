@@ -1,11 +1,17 @@
-import subprocess
-import sys
+import subprocess, sys, torch, os
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-user_token = input("Please enter your token: ")
-
-tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.2-3B", token=user_token)
-model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-3.2-3B", token=user_token)
+def token_getter():
+	"""Check if the token is in the record"""
+	file_exist = os.path.isfile("credentials.txt")
+	if file_exist:
+		f = open("credentials.txt", "r")
+		token = (f.readline())
+	else:
+		f = open("credentials.txt", "x")
+		token = input("Please enter your token: ")
+		f.write(token)	
+	return token
 
 def validate_command(command):
 	"""verify if a command is valid"""
@@ -22,8 +28,13 @@ def suggest_commands(user_input):
 	suggestions = tokenizer.decode(output[0], skip_special_tokens=True)
 	return suggestions
 
+
 if __name__ == "__main__":
 	print("Welcome to llamasay! Type a command to run or type 'exit' to quit.")
+	token = token_getter()
+ 
+	tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.2-3B", token=token)
+	model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-3.2-3B", token=token)
  
 	while True:
 		user_input = input("% ")
