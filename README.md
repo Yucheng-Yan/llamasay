@@ -44,6 +44,9 @@ When the program is unable to find any command similar to the one the user input
 % xxx
 Invalid command. Generating suggestions...
 Sorry, I can not find your intended command.
+```
+To exit llamasay, run
+```bash
 % exit
 ```
 
